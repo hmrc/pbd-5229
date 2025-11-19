@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+        label 'bndcli-agent'
+    }
     stages {
         stage('Checkout') {
             steps {
