@@ -1,39 +1,13 @@
 pipeline {
     agent {
-        label 'bndcli-agent'
+        label 'default-agent'
     }
+
     stages {
-        stage('Checkout') {
+        stage('Hello') {
             steps {
-                echo "Checking out source code..."
-                sh 'echo "Pretending to check out source code"'
+                echo 'Hello World'
             }
-        }
-        stage('Build') {
-            steps {
-                echo "Building Fun Service..."
-                sh 'echo "Pretending build process"'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "Running tests..."
-                sh 'echo "Simulating tests"'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploying application..."
-                sh 'echo "Simulating deployment"'
-            }
-        }
-    }
-    post {
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed!'
         }
     }
 }
